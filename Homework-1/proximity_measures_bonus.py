@@ -23,6 +23,14 @@ def correlation_pandas(v1, v2):
 
 
 if __name__ == "__main__":
+    """
+    Expected Output:
+    
+    Eculidean Distance between two vectors using scipy:  17.05872210923198
+    Cosine similarity of two document vectors using scipy:  0.314970394174356
+    Pearson's correlation between two vectors using scipy:  0.4238058708549456
+    Pearson's correlation between two vectors using pandas:  0.4238058708549455
+    """
     np.random.seed(1)
 
     v1 = np.random.randint(0, 20, 10)
@@ -39,3 +47,5 @@ if __name__ == "__main__":
           correlation_scipy(v1, v2))
     print("Pearson's correlation between two vectors using pandas: ",
           correlation_pandas(v1, v2))
+
+
