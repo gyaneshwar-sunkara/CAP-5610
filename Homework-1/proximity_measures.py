@@ -63,6 +63,13 @@ def correlation(v1, v2):
 
 
 if __name__ == "__main__":
+    """
+    Expected Output:
+    
+    Euclidean Distance between two vectors:  17.05872210923198
+    Cosine similarity of two document vectors:  0.314970394174356
+    Pearson's correlation between two vectors:  0.4238058708549457
+    """
     np.random.seed(1)
 
     v1 = np.random.randint(0, 20, 10)
