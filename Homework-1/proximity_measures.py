@@ -59,7 +59,9 @@ def correlation(v1, v2):
         Correlation between v1 and v2
     """
     
-    return np.corrcoef(v1, v2)[0, 1]
+    correlation =  np.cov(v1, v2)/ np.sqrt(np.cov(v1) * np.cov(v2))
+    return correlation[0, 1]
+    # return np.corrcoef(v1, v2)[0, 1]
 
 
 if __name__ == "__main__":
