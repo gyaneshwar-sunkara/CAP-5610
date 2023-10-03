@@ -3,8 +3,11 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Gradient descent to find local minimum
+
 def gradient_descent(X, Y, m, c, L, epochs):
+    """
+    Gradient descent to find local minimum
+    """
     N = len(X)
     for e in range(epochs):
         # Linear model in the format Y = mX + c
@@ -18,9 +21,10 @@ def gradient_descent(X, Y, m, c, L, epochs):
         # Derivative with respective to c
         dc = (-2/N) * np.sum(Y - Y_pred)
 
-        # Update weights(m and c)
+        # Update parameters(m and c)
         m = m - L * dm
         c = c - L * dc
+
     return m, c
 
 
@@ -47,16 +51,7 @@ if __name__ == "__main__":
     plt.scatter(X, Y)
     plt.plot(X, Y_pred, color='red')
 
-    # Save image
+    # Save the plotted results
     plt.title('Linear Regression')
     plt.savefig("linear_regression.png")
-
-    print("========================")
-
-    # Display model MSE
-    mse = ((Y - Y_pred) ** 2).mean()
-    print(f"Mean Square Error: {mse}")
-
-    # Display computed weights after gradient descent
-    print(f"Slope (m): {m}")
-    print(f"Intercept (c): {c}")
+    print("Plot saved at: ./linear_regression.png")
